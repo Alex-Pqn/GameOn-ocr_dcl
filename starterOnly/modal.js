@@ -8,20 +8,26 @@ function editNav() {
 }
 
 // DOM Elements
-const modalbg = document.querySelector(".bground");
+const modalSignup = document.getElementById('modal-signup')
+const modalThanks = document.getElementById('modal-thanks')
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
-const modalBtnClose = document.getElementById('modal-btn-close')
+const modalSignupClose = document.querySelectorAll('.modal-signup-close')
+const modalThanksClose = document.querySelectorAll('.modal-thanks-close')
 
 // launch modal event
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-modalBtnClose.addEventListener("click", closeModal);
+modalBtn.forEach((btn) => btn.addEventListener("click", launchSignupModal));
+modalSignupClose.forEach((btn) => btn.addEventListener("click", closeSignupModal));
+modalThanksClose.forEach((btn) => btn.addEventListener("click", closeThanksModal));
 
 // launch modal form
-function launchModal() {
-  modalbg.style.display = "block";
+function launchSignupModal() {
+  modalSignup.style.display = "block";
 }
-function closeModal() {
-  modalbg.style.display = "none";
+function closeSignupModal() {
+  modalSignup.style.display = "none";
+}
+function closeThanksModal() {
+  modalThanks.style.display = "none";
 }
 
