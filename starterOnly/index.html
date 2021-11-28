@@ -57,10 +57,11 @@
           <span class="close modal-signup-close"></span>
           <div class="modal-body">
             <form
-              name="reserve"
+              id="form-signup"
+              name="reserveForm"
               action="index.html"
               method="get"
-              onsubmit="return validate();"
+              onsubmit="return false"
             >
               <div
                 class="formData">
@@ -68,10 +69,12 @@
                 <input
                   class="text-control"
                   type="text"
-                  id="first"
-                  name="first"
+                  id="firstname"
+                  name="firstname"
                   minlength="2"
-                /><br>
+                />
+                <p id="firstname-err" class="formError"></p>
+
               </div>
               <div
                 class="formData">
@@ -79,9 +82,11 @@
                 <input
                   class="text-control"
                   type="text"
-                  id="last"
-                  name="last"
-                /><br>
+                  id="lastname"
+                  name="lastname"
+                />
+                <p id="lastname-err" class="formError"></p>
+
               </div>
               <div
                 class="formData">
@@ -91,7 +96,9 @@
                   type="email"
                   id="email"
                   name="email"
-                /><br>
+                />
+                <p id="email-err" class="formError"></p>
+
               </div>
               <div
                 class="formData">
@@ -101,12 +108,14 @@
                   type="date"
                   id="birthdate"
                   name="birthdate"
-                /><br>
+                />
+                <p id="birthdate-err" class="formError"></p>
               </div>
               <div
                 class="formData">
                 <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <input type="number" class="text-control" id="eventQuantity" value="0" name="eventQuantity" min="0" max="99">
+                <p id="event-quantity-err" class="formError"></p>
               </div>
               <p class="text-label">Quelles villes ?</p>
               <div
@@ -178,27 +187,27 @@
                   Portland</label
                 >
               </div>
-
+              <p id="location-err" class="formError"></p>
+              
               <div
                 class="formData">
                 <input
                   class="checkbox-input"
                   type="checkbox"
-                  id="checkbox1"
+                  id="checkboxCgu"
                   checked
                 />
-                <label class="checkbox2-label" for="checkbox1" required>
+                <label class="checkbox2-label" for="checkboxCgu" required>
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
-                <br>
-                <input class="checkbox-input" type="checkbox" id="checkbox2" />
-                <label class="checkbox2-label" for="checkbox2">
+                <input class="checkbox-input" type="checkbox" id="checkboxNewsletters" />
+                <label class="checkbox2-label" for="checkboxNewsletters">
                   <span class="checkbox-icon"></span>
                   Je Je souhaite être prévenu des prochains évènements.
                 </label>
-                <br>
               </div>
+              <p id="cgu-err newsletters-err" class="formError"></p>
               <input
                 class="btn-submit"
                 type="submit"
@@ -220,7 +229,7 @@
             <input
             class="btn-submit button modal-thanks-close"
             type="submit"
-            value="J'ai compris"
+            value="Fermer"
           />
           </div>
         </div>
