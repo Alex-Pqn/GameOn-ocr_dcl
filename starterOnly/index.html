@@ -57,10 +57,11 @@
           <span class="close modal-signup-close"></span>
           <div class="modal-body">
             <form
-              name="reserve"
+              id="form-signup"
+              name="reserveForm"
               action="index.html"
               method="get"
-              onsubmit="return validate();"
+              onsubmit="return false"
             >
               <div
                 class="formData">
@@ -220,7 +221,7 @@
             <input
             class="btn-submit button modal-thanks-close"
             type="submit"
-            value="J'ai compris"
+            value="Fermer"
           />
           </div>
         </div>
