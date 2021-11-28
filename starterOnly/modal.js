@@ -27,6 +27,9 @@ function launchSignupModal() {
 function closeSignupModal() {
   modalSignup.style.display = "none";
 }
+function launchThanksodal() {
+  modalThanks.style.display = "block";
+}
 function closeThanksModal() {
   modalThanks.style.display = "none";
 }
