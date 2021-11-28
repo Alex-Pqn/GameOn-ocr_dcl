@@ -180,6 +180,8 @@ function booleanChecked (checked, value) {
   if (checked === value) return true
   return false
 }
-function handleErr (DOM, err) {
+function handleErr (DOMElement, err) {
   validationFailed = true
+  const container = document.querySelector(DOMElement)
+  container.textContent = `${err}`
 }
