@@ -34,14 +34,17 @@ function closeThanksModal() {
   modalThanks.style.display = "none";
 }
 
+// validation
+// validate and launch thanks modal if validations are correct
+
 const formSignup = document.getElementById('form-signup')
 let models
 let validationFailed
 
-// VALIDATION
+// on submit
 formSignup.addEventListener('submit', (e) => {
   e.preventDefault()
-  validationFailed = false
+  resetValidation()
   
   const firstname = document.reserveForm.firstname.value
   const lastname = document.reserveForm.lastname.value
@@ -87,6 +90,18 @@ formSignup.addEventListener('submit', (e) => {
       type: {
         value: 'string',
         error: `La valeur entrée est incorrecte.`
+      },
+    },
+    {
+      value: birthdate,
+      errorContainer: '#birthdate-err',
+      type: {
+        value: 'string',
+        error: `La valeur entrée est incorrecte.`
+      },
+      minCaracters: {
+        value: 10,
+        error: `La date de naissance entrée est incorrecte.`
       },
     },
     {
@@ -152,11 +167,6 @@ function formValidation () {
   if (!validationFailed) sendForm()
 }
 
-function sendForm () {
-  closeSignupModal()
-  launchThanksodal()
-}
-
 function minCaracters (min, value) {
   if (value.length >= min) return true
   return false
@@ -180,8 +190,18 @@ function booleanChecked (checked, value) {
   if (checked === value) return true
   return false
 }
+
+function sendForm () {
+  closeSignupModal()
+  launchThanksodal()
+}
+function resetValidation () {
+  validationFailed = false
+  document.querySelectorAll('.formError').forEach(e => {
+    e.textContent = ''
+  })
+}
 function handleErr (DOMElement, err) {
   validationFailed = true
-  const container = document.querySelector(DOMElement)
-  container.textContent = `${err}`
+  document.querySelector(DOMElement).textContent = `${err}`
 }
