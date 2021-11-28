@@ -41,9 +41,12 @@ const formSignup = document.getElementById('form-signup')
 let models
 let validationFailed
 
-// on submit
 formSignup.addEventListener('submit', (e) => {
   e.preventDefault()
+})
+
+// on submit
+function formSubmit () {
   resetValidation()
   
   const firstname = document.reserveForm.firstname.value
@@ -153,7 +156,7 @@ formSignup.addEventListener('submit', (e) => {
   })
   
   formValidation()
-})
+}
 
 function formValidation () {
   models.forEach(e => {
