@@ -126,7 +126,7 @@ formSignup.addEventListener('submit', (e) => {
     },
     {
       value: cguBoolean,
-      errorContainer: '#cgu-err',
+      errorContainer: '#checkbox-err',
       isChecked: {
         value: true,
         error: `Vous devez accepter la case des conditions générales pour continuer.`
@@ -138,7 +138,7 @@ formSignup.addEventListener('submit', (e) => {
     },
     {
       value: newslettersBoolean,
-      errorContainer: '#newsletters-err',
+      errorContainer: '#checkbox-err',
       type: {
         value: 'boolean',
         error: `La valeur des newsletters est incorrecte.`
@@ -147,9 +147,9 @@ formSignup.addEventListener('submit', (e) => {
   ]
   
   locations.forEach(loc => { 
-    const array = models[4].allowedStrings.value
+    const array = models[5].allowedStrings.value
     array.push(loc.value)
-    if (loc.checked) models[4].value = loc.value
+    if (loc.checked) models[5].value = loc.value
   })
   
   formValidation()
