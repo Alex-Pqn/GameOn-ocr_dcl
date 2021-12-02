@@ -20,32 +20,39 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchSignupModal));
 modalSignupClose.forEach((btn) => btn.addEventListener("click", closeSignupModal));
 modalThanksClose.forEach((btn) => btn.addEventListener("click", closeThanksModal));
 
-// launch modal form
+// launch signup modal
 function launchSignupModal() {
+  resetValidation()
   modalSignup.style.display = "block";
 }
+// close signup modal
 function closeSignupModal() {
   modalSignup.style.display = "none";
 }
-function launchThanksodal() {
+// launch thanks modal
+function launchThanksModal() {
   modalThanks.style.display = "block";
 }
+// close thanks modal
 function closeThanksModal() {
   modalThanks.style.display = "none";
 }
 
-// validation
-// validate and launch thanks modal if validations are correct
+
+// FORM VALIDATION
+// validate all the fields and send the form
+// on error, display custom error on each field
 
 const formSignup = document.getElementById('form-signup')
 let models
 let validationFailed
 
+// prevent the default event to refresh the page on form submit 
 formSignup.addEventListener('submit', (e) => {
   e.preventDefault()
 })
 
-// on submit
+// on signup form submit
 function formSubmit () {
   resetValidation()
   
@@ -149,15 +156,19 @@ function formSubmit () {
     }
   ]
   
-  locations.forEach(loc => { 
-    const array = models[5].allowedStrings.value
-    array.push(loc.value)
-    if (loc.checked) models[5].value = loc.value
+  // push allowed locations strings
+  // allowed locations strings are retrieved in the form
+  locations.forEach(location => { 
+    const locationsArray = models[5].allowedStrings.value
+    locationsArray.push(location.value)
+    if (location.checked) models[5].value = location.value
   })
   
   formValidation()
 }
 
+// form validation
+// foreach the models array with each value to validate
 function formValidation () {
   models.forEach(e => {
     if (e.type && !type(e.type.value, e.value)) handleErr(e.errorContainer, e.type.error)
@@ -170,40 +181,47 @@ function formValidation () {
   if (!validationFailed) sendForm()
 }
 
-function minCaracters (min, value) {
-  if (value.length >= min) return true
-  return false
-}
-function regex (regex, value) {
-  return regex.test(value)
-}
-function type (type, value) {
-  if (typeof(value) === type) return true
-  return false
-}
-function allowedStrings (strings, value) {
+// validation functions
+const minCaracters = (min, string) => string.length >= min
+const regex = (regex, string) => regex.test(string)
+const type = (type, string) => typeof(string) === type
+const booleanChecked = (checked, boolean) => checked === boolean
+
+/**
+ * Compare array of strings with a string
+ * @param {array} stringsArray
+ * @param {string} string
+ * @returns 
+ */
+function allowedStrings (stringsArray, string) {
   let validate = false
-  strings.forEach(s => { 
-    if (s === value) validate = true
+  stringsArray.forEach(s => { 
+    if (s === string) validate = true
   })
   if (validate) return true
   return false
 }
-function booleanChecked (checked, value) {
-  if (checked === value) return true
-  return false
-}
 
+// send form
+// close signup modal, reset form and launch the thanks modal
 function sendForm () {
   closeSignupModal()
-  launchThanksodal()
+  resetForm()
+  launchThanksModal()
 }
+
+// reset validation fields
 function resetValidation () {
   validationFailed = false
   document.querySelectorAll('.formError').forEach(e => {
     e.textContent = ''
   })
 }
+// reset form fields
+function resetForm () {
+  formSignup.reset()
+}
+// handle errors
 function handleErr (DOMElement, err) {
   validationFailed = true
   document.querySelector(DOMElement).textContent = `${err}`
