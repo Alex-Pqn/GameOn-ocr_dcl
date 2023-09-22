@@ -1,6 +1,7 @@
-![GameOn Icon](/starterOnly/Logo.png)
+![GameOn Icon](/starterOnly/assets/Logo.png)
 
 ## Créez une landing page avec Javascript - GameOn
+
 ### P4 - OpenClassrooms "Développeur Concepteur Logiciel"
 
 #### Contexte du projet
@@ -16,6 +17,7 @@ Ton travail consiste à ajouter le code JavaScript manquant pour que le formulai
 - visualiser et respecter [les maquettes](https://www.figma.com/file/B7NKBDvSI18uoMLJgpnh48/UI-Design-GameOn-FR?type=design&node-id=106-855&mode=design&t=TW8g4NltSGOeInZW-0) mises à disposition
 
 #### Objectifs et Issues à fixer
+
 - Visualiser et tester l'interface utilisateur dans les dernières versions de Chrome et de Firefox, ainsi que dans les versions mobile et desktop. Corriger les erreurs d'affichage existantes.
 - Tester toutes les fonctionnalités des boutons et des entrées de formulaire (tester les valeurs correctes et incorrectes)
 - Après une validation réussie, inclure un message de confirmation de la soumission réussie pour l'utilisateur
