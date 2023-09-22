@@ -14,7 +14,7 @@ Ton travail consiste à ajouter le code JavaScript manquant pour que le formulai
 - utiliser des fichiers séparés pour le HTML, le CSS et le JavaScript ;
 - toujours commenter ton code (décrire chaque fonction et chaque classe, ainsi que les parties du code qui nécessitent plus de détails) ;
 - tester manuellement les fonctionnalités, les entrées de formulaire et l'affichage responsive ;
-- visualiser et respecter [les maquettes](https://www.figma.com/file/B7NKBDvSI18uoMLJgpnh48/UI-Design-GameOn-FR?type=design&node-id=106-855&mode=design&t=TW8g4NltSGOeInZW-0) mises à disposition
+- visualiser et respecter [les maquettes](./starterOnly/assets/UI%20Design%20GameOn.pdf) mises à disposition
 
 #### Objectifs et Issues à fixer
 
