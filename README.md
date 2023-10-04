@@ -37,7 +37,7 @@ Ton travail consiste à ajouter le code JavaScript manquant pour que le formulai
 
 ### Start App
 
-Open the [index.html](/starterOnly/index.html) file in your browser or use an extension to start a local server on this file.
+Clone the project then open the [index.html](/starterOnly/index.html) file in your browser or use an extension to start a local server on this file.
 
 > A [Github Pages preview](https://alex-pqn.github.io/GameOn-ocr_dcl/) is also available for this project
 
