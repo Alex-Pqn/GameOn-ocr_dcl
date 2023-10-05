@@ -33,17 +33,14 @@ Ton travail consiste à ajouter le code JavaScript manquant pour que le formulai
 
 ### [Prévisualisation du site](https://alex-pqn.github.io/GameOn-ocr_dcl/)
 
----
-
-### Start App
+## Start App
 
 Clone the project then open the [index.html](/starterOnly/index.html) file in your browser or use an extension to start a local server on this file.
 
+> [!NOTE]  
 > A [Github Pages preview](https://alex-pqn.github.io/GameOn-ocr_dcl/) is also available for this project
 
----
-
-### Preview
+## Preview
 
 ![Page d'accueil de GameOn](./starterOnly/assets/GameOn%20P4%20OCR%20DCL.png)
 <br/>
